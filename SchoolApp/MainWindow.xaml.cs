@@ -30,5 +30,10 @@ namespace SchoolApp
             TeachersWindow teacherWindow = new TeachersWindow();
             teacherWindow.Show();
         }
+        //private void Window_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    var students = StudentManager.GetAllStudents();
+        //    dgStudents.ItemsSource = students;
+        //}
     }
 }

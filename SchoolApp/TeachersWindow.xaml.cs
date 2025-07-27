@@ -1,5 +1,8 @@
-﻿using System;
+﻿using SchoolApp.BL;
+using SchoolApp.DAL;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,12 +22,13 @@ namespace SchoolApp
     /// </summary>
     public partial class TeachersWindow : Window
     {
+        public ObservableCollection<Teacher> Teachers { get; set; }
+
         public TeachersWindow()
         {
-            DataContext = this;
-            //bl = new bl;
-            //Teachers = bl.GetTeachers();
             InitializeComponent();
+            Teachers = new ObservableCollection<Teacher>(TecherManager.GetAllSTeachers());
+            DataContext = this;
         }
         //public List<Teacher> Teachers { get; set; }
     }
